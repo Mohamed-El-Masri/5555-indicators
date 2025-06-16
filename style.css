@@ -59,17 +59,20 @@
 
 body {
   overflow-x: hidden;
+  font-family: var(--arabic-font-primary);
   background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
   background-attachment: fixed;
   color: var(--text-primary);
   margin: 0;
   padding: 0;
   direction: rtl;
+  line-height: 1.7;
   font-weight: 400;
 }
 
 /* Enhanced Header with Creative Design */
 header {
+  background: linear-gradient(135deg, var(--primary-vibrant-blue) 0%, var(--blue-variant-1) 25%, var(--blue-variant-2) 75%, var(--blue-variant-3) 100%);
   color: var(--text-white);
   padding: 1.5rem 2rem;
   display: flex;
@@ -122,6 +125,7 @@ header h1 {
   background-clip: text;
   position: relative;
   z-index: 1;
+  font-family: var(--arabic-font-heading);
 }
 
 #date {
@@ -140,7 +144,14 @@ header h1 {
 /* Enhanced Main Layout */
 main {
   display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr; /* Adjusted: increased first column from 1fr to 1.5fr, decreased middle from 3fr to 2fr */
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 100%;
+  margin: 0 auto 2rem auto;
+  min-height: calc(100vh - 300px);
   overflow-x: hidden;
+  width: 100%; /* Ensure full width usage */
 }
 
 /* Creative Column Design */
@@ -189,7 +200,10 @@ main {
   background-repeat: no-repeat;
   background-position: bottom;
   text-align: center;
+  font-weight: 700;
   letter-spacing: -0.01em;
+  font-family: var(--arabic-font-heading);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .column ul {
@@ -206,6 +220,10 @@ main {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  font-family: var(--arabic-font-secondary);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .column ul li::before {
@@ -234,9 +252,11 @@ main {
   color: var(--text-white);
 }
 
+/* Enhanced KPI Overview with Perfect Line Styling */
 .kpi-overview {
   margin-bottom: 2.5rem;
   padding: 2rem;
+  background: linear-gradient(135deg, var(--primary-vibrant-blue) 0%, var(--blue-variant-1) 25%, var(--blue-variant-2) 75%, var(--blue-variant-3) 100%);
   color: var(--text-white);
   border-radius: 20px;
   text-align: center;
@@ -259,6 +279,7 @@ main {
 
 .kpi-overview h2 {
   color: var(--text-white);
+  font-family: var(--arabic-font-heading);
   font-size: clamp(1.6rem, 4vw, 2.2rem);
   font-weight: 800;
   margin-bottom: 1.5rem;
@@ -305,10 +326,12 @@ main {
 }
 
 .kpi-overview p {
+  font-size: 1.05rem;
   opacity: 0.95;
   margin: 0;
   position: relative;
   z-index: 1;
+  line-height: 1.8;
   font-family: var(--arabic-font-secondary);
   font-weight: 500;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -491,6 +514,9 @@ a:hover {
 /* Enhanced Responsive Design */
 @media (max-width: 1200px) {
   main {
+    grid-template-columns: 1.3fr 1.7fr; /* Adjusted proportions for medium screens */
+    gap: 1.2rem;
+    padding: 1.2rem;
     width: 100%;
   }
   
@@ -531,10 +557,15 @@ a:hover {
   }
 
   main {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
     width: 100%;
   }
 
   .column {
+    padding: 1.5rem; /* Reduced padding for mobile */
     width: 100%;
   }
 
