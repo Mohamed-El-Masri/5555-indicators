@@ -28,7 +28,17 @@
       // إضافة مؤشرات إضافية حسب الحاجة
     ];
 
+    // تصنيف اللون بناءً على القيمة والمستهدف - Updated Logic
     function getKpiColor(value, target) {
+      const percentageDiff = ((value - target) / target) * 100;
+      
+      if (value >= target) {
+        return 'green'; // حقق المستهدف - neon green
+      } else if (Math.abs(percentageDiff) <= 5) {
+        return 'yellow'; // لم يحقق المستهدف 5% فأقل - sun yellow
+      } else {
+        return 'red'; // لم يحقق المستهدف لأكثر من 5% - sunset red
+      }
     }
 
     // توليد العناصر
