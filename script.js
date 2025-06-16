@@ -28,11 +28,7 @@
       // إضافة مؤشرات إضافية حسب الحاجة
     ];
 
-    // تصنيف اللون بناءً على القيمة والمستهدف
     function getKpiColor(value, target) {
-      if (value >= target) return 'green';
-      else if (Math.abs(value - target) / target <= 0.1) return 'yellow';
-      else return 'red';
     }
 
     // توليد العناصر
