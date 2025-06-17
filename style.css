@@ -457,12 +457,17 @@ footer {
 .marquee {
   white-space: nowrap;
   overflow: hidden;
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-right 30s linear infinite; /* Changed from scroll-left to scroll-right */
   font-weight: 600;
   font-size: 1.2rem;
   padding: 0.75rem 0;
   width: 100%;
   position: relative;
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-100%); } /* Start from left side */
+  100% { transform: translateX(100%); } /* Move to right side */
 }
 
 @keyframes scroll-left {
@@ -589,7 +594,7 @@ a:hover {
 
   .marquee {
     font-size: 1rem;
-    animation-duration: 25s;
+    animation-duration: 25s; /* Keep same duration but now moving right */
   }
 }
 
@@ -622,7 +627,7 @@ a:hover {
 
   .marquee {
     font-size: 0.9rem;
-    animation-duration: 20s;
+    animation-duration: 20s; /* Keep same duration but now moving right */
   }
 }
 
